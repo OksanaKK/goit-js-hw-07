@@ -1,18 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-console.log(galleryItems);
-
-//Створення і рендер розмітки на підставі масиву даних galleryItems і наданого
-// шаблону елемента галереї.+
-//Реалізація делегування на div.gallery і отримання url великого зображення.+
-
-//Відкриття модального вікна по кліку на елементі галереї.
-// Для цього ознайомся з документацією і прикладами.
-//Заміна значення атрибута src елемента <img> в модальному вікні перед відкриттям.
-// Використовуй готову розмітку модального вікна із зображенням з прикладів бібліотеки
-// basicLightbox.
-
 const gallery = document.querySelector(".gallery");
 
 const createGallery = galleryItems
@@ -55,3 +43,5 @@ function galleryHandler(event) {
     }
   }
 }
+
+console.log(galleryItems);
