@@ -17,13 +17,6 @@ const createGallery = galleryItems
 gallery.addEventListener("click", galleryHandler);
 gallery.innerHTML = createGallery;
 
-function galleryHandler(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-}
-
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
