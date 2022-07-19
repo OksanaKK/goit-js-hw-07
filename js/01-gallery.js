@@ -18,29 +18,35 @@ const createGallery = galleryItems
   )
   .join("");
 
+gallery.innerHTML = createGallery;
+
 gallery.addEventListener("click", galleryHandler);
 
-gallery.innerHTML = createGallery;
 function galleryHandler(event) {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
   }
 
+
+
   const source = event.target.dataset.source;
+  const alt = event.target.alt;
+
+
   const instance = basicLightbox.create(
-    `<img src="${source}"  width="800" height="600">`
+    `<img src="${source}" alt = '${alt}' width="800" height="600">`
   );
 
   instance.show();
-
+}
   window.addEventListener("keydown", keyPressHandler);
 
   function keyPressHandler(e) {
     if (e.code === "Escape") {
       instance.close();
-      window.removeEventListener("keydown", keyPressHandler);
-    }
+      window.removeEventListener("keydown", keyPressHandler); 
+    
   }
 }
 
