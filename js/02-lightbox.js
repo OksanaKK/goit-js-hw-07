@@ -14,7 +14,7 @@ const createGallery = galleryItems
   )
   .join("");
 
-gallery.addEventListener("click", galleryHandler);
+
 gallery.innerHTML = createGallery;
 
 const lightbox = new SimpleLightbox(".gallery a", {
