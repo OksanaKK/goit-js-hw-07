@@ -28,26 +28,27 @@ function galleryHandler(event) {
     return;
   }
 
-
-
   const source = event.target.dataset.source;
-  const alt = event.target.alt;
-
+ 
 
   const instance = basicLightbox.create(
-    `<img src="${source}" alt = '${alt}' width="800" height="600">`
+    `<img src="${source}" width="800" height="600">`,
+    {
+      onShow: () => {
+        window.addEventListener("keydown", keyPressHandler);
+      },
+      onclose: () => {
+        window.removeEventListener("keydown", keyPressHandler);
+      },
+    }
   );
 
   instance.show();
-}
-  window.addEventListener("keydown", keyPressHandler);
 
   function keyPressHandler(e) {
     if (e.code === "Escape") {
       instance.close();
-      window.removeEventListener("keydown", keyPressHandler); 
-    
+    }
   }
 }
-
 console.log(galleryItems);
